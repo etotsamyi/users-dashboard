@@ -1,0 +1,17 @@
+.field {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.key {
+  min-width: 56px;
+  color: #8C8988;
+  font-size: 12px;
+}
+
+.value {
+  margin-left: 16px;
+  font-size: 16px;
+  text-overflow: ellipsis;
+}

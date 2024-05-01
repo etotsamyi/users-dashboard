@@ -1,0 +1,35 @@
+@media screen and (min-width: 1024px) {
+  .user-list {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .user-list {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .user-list {
+    grid-template-columns: repeat(4, auto);
+  }
+}
+
+@media screen and (min-width: 3840px) {
+  .user-list {
+    grid-template-columns: repeat(5, auto);
+  }
+}
+
+.user-list {
+  display: grid;
+  row-gap: 16px;
+  column-gap: 16px;
+  max-height: calc(100vh - 108px);
+  overflow-y: auto;
+}
+
+.user-list-wrapper {
+  width: 100%;
+}
