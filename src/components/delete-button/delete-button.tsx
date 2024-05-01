@@ -1,6 +1,7 @@
 import { MouseEventHandler, memo } from "react";
 import cn from 'classnames';
 import styles from './delete-button.module.scss';
+import { DeleteIcon } from "../icons";
 
 type TDeleteButtonProps = {
   className?: string;
@@ -12,6 +13,8 @@ export const DeleteButton = memo<TDeleteButtonProps>(({ className, handleDeleteB
     <button
       className={cn(styles.button, className)}
       onClick={handleDeleteButton}
-    />
+    >
+      <DeleteIcon />
+    </button>
   )
 });

@@ -14,7 +14,7 @@ export const UsersList = memo(() => {
   const selectedUserId = useSelector(getSelectedUserId);
 
   useEffect(() => {
-    dispatch(requestUsers(500));
+    dispatch(requestUsers(20));
   }, []);
 
   const handleSelectUser = useCallback((userId?: string): void => {

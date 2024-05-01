@@ -3,13 +3,15 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 export type TUsersState = {
-  users?: TUser[],
-  selectedUserId?: string,
+  users?: TUser[];
+  selectedUserId?: string;
+  searchQuery?: string;
 }
 
 const initialState: TUsersState = {
   users: undefined,
   selectedUserId: undefined,
+  searchQuery: undefined,
 }
 
 export const usersReducer = createSlice({
@@ -24,6 +26,9 @@ export const usersReducer = createSlice({
     },
     deleteUserById: (state, action: PayloadAction<string>) => {
       state.users = state.users?.filter((user: TUser) => user.login?.uuid !== action.payload)
-    }
+    },
+    setSearchQuery: (state, action: PayloadAction<string | undefined>) => {
+      state.searchQuery = action.payload
+    },
   },
 });
