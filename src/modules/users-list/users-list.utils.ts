@@ -7,13 +7,13 @@ export const matchUserWithSearchQuery = (user: TUser, query: string): boolean =>
   const { city, country, state } = user.location as TLocation;
 
   return (
-    first?.startsWith(query) ||
-    last?.startsWith(query) ||
-    email?.startsWith(query) ||
-    phone?.startsWith(query) ||
-    date?.startsWith(query) ||
-    city?.startsWith(query) ||
-    country?.startsWith(query) ||
-    state?.startsWith(query) || false
+    first?.toLocaleLowerCase().startsWith(query) ||
+    last?.toLocaleLowerCase().startsWith(query) ||
+    email?.toLocaleLowerCase().startsWith(query) ||
+    phone?.toLocaleLowerCase().startsWith(query) ||
+    date?.toLocaleLowerCase().startsWith(query) ||
+    city?.toLocaleLowerCase().startsWith(query) ||
+    country?.toLocaleLowerCase().startsWith(query) ||
+    state?.toLocaleLowerCase().startsWith(query) || false
   );
 };
