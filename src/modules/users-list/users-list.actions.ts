@@ -11,14 +11,15 @@ export const requestUsers = (amount: number = 500) => async (
     const response: TRandomUsersResponse | undefined = await randomUserApi(amount);
 
     if (response?.results) {
-      dispatch(setUsersList(response.results))
+      dispatch(selectUser(undefined));
+      dispatch(setUsersList(response.results));
     }
   } catch (e) {
     console.log('an error occurred while fetching userlist')
   }
 };
 
-export const selectUser = (userId: string) => (
+export const selectUser = (userId?: string) => (
   dispatch: TDispatch,
 ): void => {
   dispatch(setSelectedUserId(userId))

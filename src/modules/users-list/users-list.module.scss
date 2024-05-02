@@ -1,22 +1,28 @@
+@media screen and (max-width: 1025px) {
+  .user-list {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .user-list {
     grid-template-columns: repeat(2, auto);
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
   .user-list {
     grid-template-columns: repeat(3, auto);
   }
 }
 
-@media screen and (min-width: 2560px) {
+@media screen and (min-width: 1500px) {
   .user-list {
     grid-template-columns: repeat(4, auto);
   }
 }
 
-@media screen and (min-width: 3840px) {
+@media screen and (min-width: 2000px) {
   .user-list {
     grid-template-columns: repeat(5, auto);
   }

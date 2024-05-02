@@ -21,7 +21,7 @@ export const usersReducer = createSlice({
     setUsersList: (state, action: PayloadAction<TUser[]>) => {
       state.users = action.payload
     },
-    setSelectedUserId: (state, action: PayloadAction<string>) => {
+    setSelectedUserId: (state, action: PayloadAction<string | undefined>) => {
       state.selectedUserId = action.payload
     },
     deleteUserById: (state, action: PayloadAction<string>) => {
