@@ -10,7 +10,7 @@ export const InfoField = memo<TInfoFieldProps>(({ fieldKey, fieldValue }) => {
   return (
     <div className={styles.field}>
       <div className={styles.key}>{fieldKey}</div>
-      <div className={styles.value}>{fieldValue ?? 'no data'}</div>
+      <div title={fieldValue?.toString()} className={styles.value}>{fieldValue ?? 'no data'}</div>
     </div>
   )
 });
