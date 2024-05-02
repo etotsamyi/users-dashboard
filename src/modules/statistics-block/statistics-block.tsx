@@ -12,11 +12,13 @@ import {
   maleUsersFieldName,
   femaleUsersFieldName,
 } from "./statistics-block.constants";
+import { getUsersList } from "../users-list";
 
 export const StatisticsBlock = memo(() => {
   const usersCount = useSelector(getUsersCount);
   const userStatisticsByAge = useSelector(getUsersStatisticsByAge);
   const userStatisticsByGender = useSelector(getUsersStatisticsByGender);
+  const userslist = useSelector(getUsersList);
 
   const {
     usersFrom11To20,
@@ -29,6 +31,10 @@ export const StatisticsBlock = memo(() => {
     maleUsers,
     femaleUsers,
   } = userStatisticsByGender;
+
+  if (!userslist?.length) {
+    return null;
+  }
 
   return (
     <div className={styles.statistics}>

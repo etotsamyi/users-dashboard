@@ -2,7 +2,7 @@ import { memo, useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { requestUsers, selectUser } from "./users-list.actions";
 import { TDispatch } from "@/store";
-import { getSelectedUserId, getUsersList } from "./users-list.selectors";
+import { getSearchResult, getSelectedUserId } from "./users-list.selectors";
 import { TUser } from "@/api/random-users";
 import { UserCard } from "@/components";
 import styles from './users-list.module.scss';
@@ -10,11 +10,11 @@ import styles from './users-list.module.scss';
 export const UsersList = memo(() => {
   const dispatch = useDispatch<TDispatch>();
 
-  const userslist = useSelector(getUsersList);
+  const userslist = useSelector(getSearchResult);
   const selectedUserId = useSelector(getSelectedUserId);
 
   useEffect(() => {
-    dispatch(requestUsers(20));
+    dispatch(requestUsers());
   }, []);
 
   const handleSelectUser = useCallback((userId?: string): void => {

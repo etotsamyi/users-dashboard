@@ -5,27 +5,27 @@ import { usersReducer } from '@/store/reducers/main-page'
 const { setUsersList, setSelectedUserId, deleteUserById } = usersReducer.actions
 
 export const requestUsers = (amount: number = 500) => async (
-    dispatch: TDispatch,
+  dispatch: TDispatch,
 ): Promise<void> => {
-    try {
-        const response: TRandomUsersResponse | undefined = await randomUserApi(amount);
+  try {
+    const response: TRandomUsersResponse | undefined = await randomUserApi(amount);
 
-        if (response?.results) {
-            dispatch(setUsersList(response.results))
-        }
-    } catch (e) {
-        //TODO
+    if (response?.results) {
+      dispatch(setUsersList(response.results))
     }
+  } catch (e) {
+    console.log('an error occurred while fetching userlist')
+  }
 };
 
 export const selectUser = (userId: string) => (
-    dispatch: TDispatch,
+  dispatch: TDispatch,
 ): void => {
-    dispatch(setSelectedUserId(userId))
+  dispatch(setSelectedUserId(userId))
 };
 
 export const deleteUser = (userId: string) => (
-    dispatch: TDispatch,
+  dispatch: TDispatch,
 ): void => {
-    dispatch(deleteUserById(userId))
+  dispatch(deleteUserById(userId))
 };

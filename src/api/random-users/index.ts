@@ -4,5 +4,6 @@ export type {
     TUser,
     TLocation,
     TDob,
+    TName,
 } from './random-users-api.types';
 export { EUserGender } from './random-users-api.enums';
